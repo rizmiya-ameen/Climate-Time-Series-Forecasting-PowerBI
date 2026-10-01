@@ -1,8 +1,8 @@
 # 🌦️ Climate Time-Series Forecasting & Power BI Analytics
 
-An end-to-end **climate analytics and decision-support project** combining Python-based data processing, statistical time-series forecasting, and interactive Power BI dashboards for Sri Lankan meteorological data.
+An end to end **climate analytics and decision-support project** combining Python based data processing, statistical time-series forecasting, and interactive Power BI dashboards for Sri Lankan meteorological data.
 
-The project uses **NOAA Global Surface Summary of the Day (GSOD)** observations from **2015–2024** to explore climate patterns and generate short-term temperature forecasts using **SARIMA** models.
+The project uses **NOAA Global Surface Summary of the Day (GSOD)** observations from **2015–2024** to explore climate patterns and generate short term temperature forecasts using **SARIMA** models.
 
 ## 🎯 Project Overview
 
@@ -10,14 +10,14 @@ Climate datasets contain strong seasonal patterns, spatial variability, and miss
 
 This project develops an integrated analytical workflow that combines:
 
-- 🐍 Python-based data preprocessing and transformation
-- 📊 Exploratory and seasonal climate analysis
-- 🌍 Station-level and spatial comparisons
-- 🌧️ Rainfall variability and extreme-event analysis
-- 📈 SARIMA time-series forecasting
-- ✅ Hold-out forecast validation
-- 🔮 Temperature projections with 95% confidence intervals
-- 📊 Interactive Power BI dashboards for decision support
+- Python based data preprocessing and transformation
+- Exploratory and seasonal climate analysis
+- Station level and spatial comparisons
+- Rainfall variability and extreme-event analysis
+- SARIMA time-series forecasting
+- Hold-out forecast validation
+- Temperature projections with 95% confidence intervals
+- Interactive Power BI dashboards for decision support
 
 The objective is to bridge the gap between **statistical forecasting** and **interactive Business Intelligence**, allowing analytical results to be explored without rerunning the underlying models.
 
@@ -91,11 +91,11 @@ A seasonal period of **12 months** was used to represent annual climatic cycles.
 
 A hold-out validation strategy was used:
 
-| Dataset | Period |
-|---|---|
-| Training | January 2015 – December 2022 |
+| Dataset    | Period                       |
+| ---------- | ---------------------------- |
+| Training   | January 2015 – December 2022 |
 | Validation | January 2023 – December 2024 |
-| Forecast | January 2025 – June 2026 |
+| Forecast   | January 2025 – June 2026     |
 
 Forecast performance was evaluated using **Root Mean Square Error (RMSE)** and **Mean Absolute Error (MAE)**.
 
@@ -103,23 +103,23 @@ Forecast performance was evaluated using **Root Mean Square Error (RMSE)** and *
 
 The national SARIMA model achieved:
 
-| Metric | Result |
-|---|---:|
+| Metric   |       Result |
+| -------- | -----------: |
 | **RMSE** | **0.832 °C** |
-| **MAE** | **0.748 °C** |
+| **MAE**  | **0.748 °C** |
 
 The average forecast deviation remained below **1°C** during the hold-out validation period.
 
 ## 📍 Station-Level Results
 
-| Station | RMSE (°C) | MAE (°C) |
-|---|---:|---:|
-| Batticaloa | 1.235 | 0.878 |
-| Colombo | 0.526 | 0.396 |
-| Galle | 0.839 | 0.703 |
-| Jaffna | 1.167 | 0.800 |
-| Kandy | 1.620 | 1.465 |
-| Nuwara Eliya | 0.952 | 0.758 |
+| Station      | RMSE (°C) | MAE (°C) |
+| ------------ | --------: | -------: |
+| Batticaloa   |     1.235 |    0.878 |
+| Colombo      |     0.526 |    0.396 |
+| Galle        |     0.839 |    0.703 |
+| Jaffna       |     1.167 |    0.800 |
+| Kandy        |     1.620 |    1.465 |
+| Nuwara Eliya |     0.952 |    0.758 |
 
 The results demonstrate spatial variation in forecasting performance across different climatic regions.
 
@@ -129,13 +129,13 @@ Forecasting outputs and processed climate datasets were integrated into **Power 
 
 The dashboards support:
 
-- 🌡️ Temperature trend exploration
-- 🗺️ Station-level and spatial analysis
-- 🌧️ Rainfall variability analysis
-- 📅 Year and station filtering
-- 📈 Historical vs forecast temperature comparison
-- 🔮 Forecast trajectories
-- 📉 95% confidence interval visualization
+- Temperature trend exploration
+- Station-level and spatial analysis
+- Rainfall variability analysis
+- Year and station filtering
+- Historical vs forecast temperature comparison
+- Forecast trajectories
+- 95% confidence interval visualization
 
 Power BI is used for visualization and interactive exploration, while statistical modeling and validation are performed externally in Python.
 
@@ -156,7 +156,7 @@ The analysis identified:
 
 `Python` • `Pandas` • `Time-Series Analysis` • `SARIMA` • `Statsmodels` • `Forecasting` • `Data Preprocessing` • `Exploratory Data Analysis` • `Power BI` • `Business Intelligence` • `Data Visualization` • `Climate Analytics` • `NOAA GSOD`
 
-## 📁 Suggested Repository Structure
+<!-- ## 📁 Suggested Repository Structure
 
 ```text
 Climate-Time-Series-Forecasting-PowerBI/
@@ -187,7 +187,7 @@ When running locally, install the dependencies required by the notebook and exec
 
 **Integrated BI Driven Climate Analytics: Time-Series Forecasting and Interactive Decision Support Dashboards for Sri Lanka**
 
-**Author:** Noorul Ameen Packirdeen Fathima Rizmiya  
+**Author:** Noorul Ameen Packirdeen Fathima Rizmiya
 **Affiliations:** NIBM, Sri Lanka / Ural Federal University, Russia
 
 The accompanying paper documents the methodology, validation results, climate analysis, and integration of statistical forecasting with Power BI.
@@ -208,6 +208,6 @@ Potential extensions include:
 
 Interests: Artificial Intelligence • Machine Learning • Data Science • Business Intelligence • Data Analytics
 
----
+--- -->
 
 ⭐ If you find this project useful or interesting, consider starring the repository.
