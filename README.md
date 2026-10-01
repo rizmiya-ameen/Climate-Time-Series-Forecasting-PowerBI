@@ -123,6 +123,24 @@ The average forecast deviation remained below **1°C** during the hold-out valid
 
 The results demonstrate spatial variation in forecasting performance across different climatic regions.
 
+### 🌧️ Rainfall Variability & Extremes
+
+The interactive Power BI visualization explores the relationship between **rainy days per month** and **total monthly rainfall**.
+
+![Rainfall Intensity-Frequency Analysis](images/rainfall-intensity-frequency.png)
+
+#### Monthly Rainfall Distribution
+
+![Monthly Rainfall Distribution and Variability](images/rainfall-variability.png)
+
+Rainfall shows substantial variability, particularly during the late monsoon period, with October and November showing higher dispersion and several extreme observations.
+
+### 🌡️ Station-Level Temperature Climatology
+
+![Station-Level Monthly Mean Temperature Climatology](images/temperature-climatology.png)
+
+Monthly climatology reveals clear seasonal and geographic differences. Coastal stations generally remain warmer, while high-elevation **Nuwara Eliya** shows substantially lower temperatures.
+
 ## 📊 Power BI Decision-Support Dashboards
 
 Forecasting outputs and processed climate datasets were integrated into **Power BI** to create interactive analytical dashboards.
