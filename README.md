@@ -19,32 +19,30 @@ This project develops an integrated analytical workflow that combines:
 - Temperature projections with 95% confidence intervals
 - Interactive Power BI dashboards for decision support
 
-The objective is to bridge the gap between **statistical forecasting** and **interactive Business Intelligence**, allowing analytical results to be explored without rerunning the underlying models.
+The objective is to bridge **statistical forecasting** and **interactive Business Intelligence**.
 
 ## 🧩 Analytical Workflow
 
 ```text
 NOAA GSOD Data
-      ↓
+       ↓
 Python Preprocessing
 (Cleaning, Unit Conversion, Aggregation)
-      ↓
+       ↓
 Exploratory & Seasonal Analysis
-      ↓
+       ↓
 SARIMA Modeling & Validation
-      ↓
+       ↓
 Forecast Outputs
-      ↓
+       ↓
 Interactive Power BI Dashboards
 ```
 
 ## 📂 Dataset
 
-Meteorological observations were obtained from the **NOAA Global Surface Summary of the Day (GSOD)** dataset.
-
 **Study period:** January 2015 – December 2024
 
-The analysis includes six Sri Lankan meteorological stations representing coastal, inland, and highland climatic conditions:
+Six Sri Lankan meteorological stations were analyzed:
 
 - Batticaloa
 - Colombo
@@ -53,43 +51,19 @@ The analysis includes six Sri Lankan meteorological stations representing coasta
 - Kandy
 - Nuwara Eliya
 
-Variables used include mean temperature, maximum and minimum temperature, precipitation, rainy days, and station metadata such as latitude, longitude, and elevation.
-
-Daily observations were cleaned and converted to metric units before being aggregated to monthly resolution.
+Daily observations were cleaned, converted to metric units, and aggregated to monthly resolution.
 
 ## 🔬 Methodology
 
-### Data Preprocessing
+### 🐍 Data Preprocessing
 
-Python and Pandas were used to standardize dates, select relevant meteorological variables, handle official GSOD missing-value codes, convert measurements to metric units, and aggregate daily observations into monthly indicators.
-
-Missing daily observations were excluded from monthly calculations rather than artificially imputed.
-
-### Exploratory Climate Analysis
-
-The analysis investigates:
-
-- Long-term temperature trends
-- Seasonal temperature cycles
-- Interannual variability
-- Geographic differences between stations
-- Rainfall distribution and variability
-- Rainfall intensity-frequency relationships
+Python and Pandas were used for cleaning, unit conversion, missing-value handling, and monthly aggregation.
 
 ### 📈 SARIMA Forecasting
 
-Seasonal Autoregressive Integrated Moving Average (**SARIMA**) models were used for monthly mean-temperature forecasting.
+SARIMA models were developed at national and individual station levels, using a seasonal period of **12 months**.
 
-Models were developed at:
-
-- 🇱🇰 National level
-- 📍 Individual station level
-
-A seasonal period of **12 months** was used to represent annual climatic cycles.
-
-### Model Validation
-
-A hold-out validation strategy was used:
+### ✅ Model Validation
 
 | Dataset    | Period                       |
 | ---------- | ---------------------------- |
@@ -97,20 +71,24 @@ A hold-out validation strategy was used:
 | Validation | January 2023 – December 2024 |
 | Forecast   | January 2025 – June 2026     |
 
-Forecast performance was evaluated using **Root Mean Square Error (RMSE)** and **Mean Absolute Error (MAE)**.
+Performance was evaluated using **RMSE** and **MAE**.
 
-## 🏆 National Forecasting Results
+## 📊 Results & Dashboard Highlights
 
-The national SARIMA model achieved:
+### 🔮 Observed & SARIMA-Based Temperature Projections (2015–2026)
+
+The models generate temperature projections through **June 2026** with **95% confidence intervals**. The Power BI dashboard enables interactive station selection and comparison of historical observations, forecast trajectories, and uncertainty bounds.
+
+![Observed and SARIMA-Based Temperature Projections](images/sarima-temperature-forecast.png)
+
+#### 🏆 National Forecast Performance
 
 | Metric   |       Result |
 | -------- | -----------: |
 | **RMSE** | **0.832 °C** |
 | **MAE**  | **0.748 °C** |
 
-The average forecast deviation remained below **1°C** during the hold-out validation period.
-
-## 📍 Station-Level Results
+#### 📍 Station-Level Forecast Performance
 
 | Station      | RMSE (°C) | MAE (°C) |
 | ------------ | --------: | -------: |
@@ -120,8 +98,6 @@ The average forecast deviation remained below **1°C** during the hold-out valid
 | Jaffna       |     1.167 |    0.800 |
 | Kandy        |     1.620 |    1.465 |
 | Nuwara Eliya |     0.952 |    0.758 |
-
-The results demonstrate spatial variation in forecasting performance across different climatic regions.
 
 ### 🌧️ Rainfall Variability & Extremes
 
@@ -141,9 +117,9 @@ Rainfall shows substantial variability, particularly during the late monsoon per
 
 Monthly climatology reveals clear seasonal and geographic differences. Coastal stations generally remain warmer, while high-elevation **Nuwara Eliya** shows substantially lower temperatures.
 
-## 📊 Power BI Decision-Support Dashboards
+## 📊 Power BI Decision-Support Dashboard
 
-Forecasting outputs and processed climate datasets were integrated into **Power BI** to create interactive analytical dashboards.
+The processed datasets and forecasting outputs were integrated into **Microsoft Power BI**.
 
 The dashboards support:
 
@@ -155,11 +131,13 @@ The dashboards support:
 - Forecast trajectories
 - 95% confidence interval visualization
 
-Power BI is used for visualization and interactive exploration, while statistical modeling and validation are performed externally in Python.
+The complete Power BI project is included as:
+
+`📁 sri_lanka_climate_forecasting.pbix`
+
+> **Note:** The dashboard is not currently hosted publicly. The `.pbix` file can be opened using Microsoft Power BI Desktop. Key dashboard views and analytical results are presented above.
 
 ## 💡 Key Findings
-
-The analysis identified:
 
 - Strong annual temperature seasonality across Sri Lankan stations.
 - Clear geographic and altitudinal differences in temperature.
@@ -172,60 +150,8 @@ The analysis identified:
 
 ## 🛠️ Technologies & Skills
 
-`Python` • `Pandas` • `Time-Series Analysis` • `SARIMA` • `Statsmodels` • `Forecasting` • `Data Preprocessing` • `Exploratory Data Analysis` • `Power BI` • `Business Intelligence` • `Data Visualization` • `Climate Analytics` • `NOAA GSOD`
+`Python` • `Pandas` • `Statsmodels` • `SARIMA` • `Time-Series Analysis` • `Forecasting` • `Data Preprocessing` • `Exploratory Data Analysis` • `Power BI` • `Business Intelligence` • `Data Visualization` • `Climate Analytics` • `NOAA GSOD`
 
-<!-- ## 📁 Suggested Repository Structure
-
-```text
-Climate-Time-Series-Forecasting-PowerBI/
-│
-├── README.md
-├── notebooks/
-│   └── climate_time_series_forecasting.ipynb
-├── powerbi/
-│   └── climate_analytics_dashboard.pbix
-├── results/
-│   └── dashboard-screenshots/
-├── paper/
-│   └── climate_analytics_paper.pdf
-├── data/
-│   └── README.md
-└── requirements.txt
-```
-
-> Repository filenames may differ from this suggested structure depending on the uploaded project files.
-
-## 🚀 Running the Analysis
-
-The Python analysis can be opened and executed using **Google Colab** or a local Jupyter environment.
-
-When running locally, install the dependencies required by the notebook and execute the cells sequentially to reproduce the preprocessing, exploratory analysis, validation, and forecasting workflow.
-
-## 📄 Research Paper
-
-**Integrated BI Driven Climate Analytics: Time-Series Forecasting and Interactive Decision Support Dashboards for Sri Lanka**
-
-**Author:** Noorul Ameen Packirdeen Fathima Rizmiya
-**Affiliations:** NIBM, Sri Lanka / Ural Federal University, Russia
-
-The accompanying paper documents the methodology, validation results, climate analysis, and integration of statistical forecasting with Power BI.
-
-## 🔭 Future Work
-
-Potential extensions include:
-
-- Multivariable climate forecasting
-- Nonlinear rainfall forecasting approaches
-- Real-time meteorological data integration
-- Extended climate indicators
-- Enhanced operational climate-intelligence dashboards
-
-## 👩‍💻 Author
-
-**Noorul Ameen Packirdeen Fathima Rizmiya**
-
-Interests: Artificial Intelligence • Machine Learning • Data Science • Business Intelligence • Data Analytics
-
---- -->
+---
 
 ⭐ If you find this project useful or interesting, consider starring the repository.
